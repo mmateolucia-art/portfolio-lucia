@@ -3,7 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lucía Mateo — Diseñadora Gráfica · Branding & Identity</title>
+<script>document.documentElement.classList.add('js');</script>
+<title>Lucía Mateo — Diseñadora de Marca y Comunicación Visual</title>
+<meta name="description" content="Portfolio de Lucía Mateo, Diseñadora de Marca y Comunicación Visual: investigación, estrategia, sistema visual y aplicaciones de marca.">
+<link rel="canonical" href="https://mmateolucia-art.github.io/portfolio-lucia/">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_AR">
+<meta property="og:url" content="https://mmateolucia-art.github.io/portfolio-lucia/">
+<meta property="og:title" content="Lucía Mateo — Diseñadora de Marca y Comunicación Visual">
+<meta property="og:description" content="Portfolio de Lucía Mateo, Diseñadora de Marca y Comunicación Visual: investigación, estrategia, sistema visual y aplicaciones de marca.">
+<meta property="og:image" content="https://cdn.myportfolio.com/95ef7bb7-5c14-4b65-9e2f-064f69b34ddf/188fa407-0d15-4725-ad2d-2b0a0251a399_rwc_423x0x3004x2253x3004.jpg">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lucía Mateo — Diseñadora de Marca y Comunicación Visual">
+<meta name="twitter:description" content="Portfolio de Lucía Mateo, Diseñadora de Marca y Comunicación Visual.">
+<meta name="twitter:image" content="https://cdn.myportfolio.com/95ef7bb7-5c14-4b65-9e2f-064f69b34ddf/188fa407-0d15-4725-ad2d-2b0a0251a399_rwc_423x0x3004x2253x3004.jpg">
+
+<meta name="theme-color" content="#EFEAE1">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -17,13 +36,16 @@
       <span class="logo-mark">LM</span>
       Lucía Mateo
     </a>
-    <nav class="links">
+    <nav class="links" id="mobileNav">
       <a href="#trabajo">Trabajo</a>
       <a href="#proceso">Proceso</a>
       <a href="#toolkit">Toolkit</a>
       <a href="#sobre-mi">Sobre mí</a>
     </nav>
     <a href="#contacto" class="nav-cta">Hablemos ↗</a>
+    <button class="burger" id="burgerBtn" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
 
@@ -34,41 +56,48 @@
     <div class="wrap hero-grid">
       <div>
         <div class="eyebrow">portfolio 2026 — branding &amp; identity design</div>
-        <h1>Marcas con sentido, construidas desde <span class="hl">la estrategia</span>.</h1>
-        <p class="sub">Soy Lucía Mateo, diseñadora gráfica especializada en branding e identidad visual. Trabajo la marca de punta a punta: investigación, concepto, sistema visual y aplicaciones.</p>
+        <h1>Identidad visual con <span class="hl">intención</span>.</h1>
+        <p class="sub">Hagamos que tu marca se vea tan bien como es tu proyecto. Soy Lucía Mateo, Diseñadora de Marca y Comunicación Visual.</p>
         <div class="hero-ctas">
           <a href="#trabajo" class="btn btn-primary">Ver proyectos ↓</a>
           <button class="btn btn-ghost" id="copyEmailBtn">luciamateodis4@gmail.com</button>
         </div>
+        <div class="hero-services">
+          <span class="chip">Branding</span>
+          <span class="chip">Naming</span>
+          <span class="chip">Packaging</span>
+          <span class="chip">Papelería</span>
+        </div>
       </div>
 
-      <div class="hero-visual" aria-hidden="true">
-        <div class="mb-card palette-card frame">
-          <span class="pin"></span>
+      <div class="hero-visual">
+        <span class="pin"></span>
+        <a class="folder-card fc1 frame" href="tripzo.html">
           <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
-          <span class="frame-tag">paleta / marca</span>
-          <div class="sw-row">
-            <div class="sw c1"></div><div class="sw c2"></div><div class="sw c3"></div><div class="sw c4"></div>
+          <span class="frame-tag">proyecto / 01</span>
+          <div class="folder-thumb">
+            <img src="assets/images/tripzo-cover.jpg" alt="Identidad de marca de Tripzo, agencia de viajes temáticos" loading="lazy">
           </div>
-          <div class="lbl">exploración cromática</div>
-        </div>
+          <div class="folder-lbl">Tripzo</div>
+        </a>
 
-        <div class="mb-card logo-card frame">
-          <span class="pin"></span>
+        <a class="folder-card fc2 frame" href="panaderia-san-ignacio.html">
           <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
-          <div class="mark">LM</div>
-          <div class="lbl">logo / exploración</div>
-        </div>
+          <span class="frame-tag">proyecto / 02</span>
+          <div class="folder-thumb">
+            <img src="assets/images/panaderia-san-ignacio-cover.jpg" alt="Rebranding de Panadería San Ignacio" loading="lazy">
+          </div>
+          <div class="folder-lbl">Panadería San Ignacio</div>
+        </a>
 
-        <div class="mb-card type-card frame">
-          <span class="pin"></span>
+        <a class="folder-card fc3 frame" href="koru-travel.html">
           <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
-          <span class="frame-tag">tipografía</span>
-          <div class="aa">Aa</div>
-          <div class="lbl">display / Bricolage</div>
-        </div>
-
-        <div class="mb-card tag-card">Sistema de marca<br>en desarrollo…</div>
+          <span class="frame-tag">proyecto / 03</span>
+          <div class="folder-thumb">
+            <img src="assets/images/koru-travel-cover.jpg" alt="Identidad de marca de Koru Travel, agencia de viajes en Mendoza" loading="lazy">
+          </div>
+          <div class="folder-lbl">Koru Travel</div>
+        </a>
       </div>
     </div>
   </section>
@@ -78,18 +107,18 @@
   <!-- WORK -->
   <section class="pad" id="trabajo">
     <div class="wrap">
-      <div class="section-head">
-        <h2>Marcas construidas de punta a punta.</h2>
-        <p>Tres proyectos de identidad visual, del concepto al sistema completo.</p>
+      <div class="section-head reveal">
+        <h2 class="h2-work">Marcas que empezaron sin identidad clara y terminaron con un <span class="hl">sistema propio</span>.</h2>
+        <p>Tres proyectos de branding e identidad visual, cada uno con su propio sistema de marca.</p>
       </div>
 
       <div class="work-grid">
 
-        <a class="proj frame" href="tripzo.html">
+        <a class="proj frame reveal" href="tripzo.html">
           <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
           <span class="frame-tag">proyecto / 01</span>
           <div class="proj-thumb">
-            <img src="https://cdn.myportfolio.com/95ef7bb7-5c14-4b65-9e2f-064f69b34ddf/188fa407-0d15-4725-ad2d-2b0a0251a399_rwc_423x0x3004x2253x3004.jpg" alt="Identidad de marca de Tripzo, agencia de viajes temáticos" loading="lazy">
+            <img src="assets/images/tripzo-portada.jpg" alt="Identidad de marca de Tripzo, agencia de viajes temáticos" loading="lazy">
             <div class="tags"><span>Brand Identity</span><span>Tesis 2026</span></div>
           </div>
           <div class="proj-body">
@@ -99,11 +128,11 @@
           </div>
         </a>
 
-        <a class="proj frame" href="panaderia-san-ignacio.html">
+        <a class="proj frame reveal" href="panaderia-san-ignacio.html">
           <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
           <span class="frame-tag">proyecto / 02</span>
           <div class="proj-thumb">
-            <img src="https://cdn.myportfolio.com/95ef7bb7-5c14-4b65-9e2f-064f69b34ddf/ff6a6dfa-7908-48b1-90e7-2f873faaba4f_rwc_484x0x2879x2160x2879.jpg" alt="Rebranding de Panadería San Ignacio" loading="lazy">
+            <img src="assets/images/panaderia-san-ignacio-portada.jpg" alt="Rebranding de Panadería San Ignacio" loading="lazy">
             <div class="tags"><span>Rebranding</span><span>2026</span></div>
           </div>
           <div class="proj-body">
@@ -113,21 +142,21 @@
           </div>
         </a>
 
-        <a class="proj frame" href="koru-travel.html">
+        <a class="proj frame reveal" href="koru-travel.html">
           <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
           <span class="frame-tag">proyecto / 03</span>
           <div class="proj-thumb">
-            <img src="https://cdn.myportfolio.com/95ef7bb7-5c14-4b65-9e2f-064f69b34ddf/c69c2d61-d55c-49b7-8592-9cf2826ec185_car_4x3.jpg" alt="Identidad de marca de Koru Travel, agencia de viajes en Mendoza" loading="lazy">
-            <div class="tags"><span>Brand Identity</span><span>Turismo</span></div>
+            <img src="assets/images/koru-travel-portada.jpg" alt="Identidad de marca de Koru Travel, agencia de viajes en Mendoza" loading="lazy">
+            <div class="tags"><span>Cofundadora</span><span>Brand & Growth</span></div>
           </div>
           <div class="proj-body">
             <h3>Koru Travel</h3>
-            <p>Una nueva mirada sobre el turismo en Mendoza: un sistema visual joven y natural que combina ilustración y fotografía para conectar con una generación que viaja desde lo sensorial.</p>
+            <p>Cofundé esta agencia de turismo en Mendoza y construí su identidad de marca desde cero. Con estrategia de contenido y campañas en Meta Ads, la comunidad creció a más de 4.500 seguidores, generando entre 70 y 100 leads diarios.</p>
             <div class="proj-arrow">Ver caso de estudio →</div>
           </div>
         </a>
 
-        <div class="proj frame" style="display:flex; align-items:center; justify-content:center; text-align:center; padding:22px; background:var(--violet); color:#fff; border-color:transparent;">
+        <div class="proj frame reveal" style="display:flex; align-items:center; justify-content:center; text-align:center; padding:22px; background:var(--violet); color:#fff; border-color:transparent;">
           <div>
             <h3 style="margin-bottom:10px;">¿Quieres ver más?</h3>
             <p style="color:rgba(255,255,255,.85); font-size:14px; margin-bottom:16px;">Más piezas de cada proyecto, próximamente en Behance.</p>
@@ -144,30 +173,30 @@
   <!-- PROCESS -->
   <section class="pad" id="proceso">
     <div class="wrap">
-      <div class="section-head">
-        <h2>De la estrategia al sistema de marca.</h2>
+      <div class="section-head reveal">
+        <h2>De la estrategia<br>al sistema de marca.</h2>
         <p>Cuatro etapas para construir una identidad que funcione en cualquier contexto.</p>
       </div>
       <div class="steps">
-        <div class="step st1">
+        <div class="step st1 reveal">
           <div class="num">01</div>
           <h3>Investigar</h3>
           <p>Entender el negocio, su público y el contexto antes de proponer nada visual.</p>
         </div>
-        <div class="step st2">
+        <div class="step st2 reveal">
           <div class="num">02</div>
           <h3>Estrategia</h3>
           <p>Definir posicionamiento, tono de voz y propuesta de valor de la marca.</p>
         </div>
-        <div class="step st3">
+        <div class="step st3 reveal">
           <div class="num">03</div>
           <h3>Identidad visual</h3>
-          <p>Construir el sistema: logo, paleta, tipografía y elementos gráficos.</p>
+          <p>Construir una identidad de marca incluyendo los elementos que esta pueda requerir. (logo, mapa de color, puesta tipográfica)</p>
         </div>
-        <div class="step st4">
+        <div class="step st4 reveal">
           <div class="num">04</div>
           <h3>Aplicaciones</h3>
-          <p>Llevar la marca a piezas reales: redes sociales, packaging y papelería.</p>
+          <p>Llevar la marca a piezas reales teniendo en cuenta posibles canales de comunicación (redes sociales, packaging, papelería, etc.).</p>
         </div>
       </div>
     </div>
@@ -178,11 +207,11 @@
   <!-- TOOLKIT -->
   <section class="pad" id="toolkit">
     <div class="wrap">
-      <div class="section-head">
+      <div class="section-head reveal">
         <h2>Toolkit</h2>
         <p>Lo que uso a diario para llevar una marca del concepto a la pieza final.</p>
       </div>
-      <div class="toolbar">
+      <div class="toolbar reveal">
         <span class="chip">Illustrator</span>
         <span class="chip">Photoshop</span>
         <span class="chip">InDesign</span>
@@ -206,7 +235,39 @@
         </div>
         <div class="about-copy">
           <div class="eyebrow">sobre mí</div>
-          <p>Soy diseñadora gráfica especializada en branding e identidad visual. Me interesa construir marcas con sentido, combinando estrategia, storytelling y sistemas visuales sólidos — no solo un logo bonito, sino una identidad que funcione en cualquier contexto.</p>
+          <p>Soy diseñadora de marca y comunicación visual, con base en Barcelona. Mi trabajo conecta el diseño con la estrategia: construyo identidades visuales, pero también pienso cómo esa marca se comunica y crece — desde una campaña en redes hasta la coordinación de un equipo creativo.</p>
+
+          <div class="about-facts">
+            <div class="fact-col">
+              <div class="fact-label mono">Datos rápidos</div>
+              <ul class="fact-list">
+                <li>Barcelona, España</li>
+                <li>Lic. en Diseño Gráfico (mención en Identidad) — Universidad Champagnat</li>
+                <li>Español (nativo) · Inglés (C1)</li>
+              </ul>
+            </div>
+            <div class="fact-col">
+              <div class="fact-label mono">Trayectoria</div>
+              <ul class="fact-list timeline">
+                <li>
+                  <span class="role">Co-fundadora &amp; Diseñadora de Marca</span>
+                  <span class="org">Koru Travel</span>
+                  <span class="dates mono">2024–2026</span>
+                </li>
+                <li>
+                  <span class="role">Diseño Gráfico</span>
+                  <span class="org">Vectores, Agencia de Comunicación Digital</span>
+                  <span class="dates mono">2021–2023</span>
+                </li>
+                <li>
+                  <span class="role">Producción Gráfica</span>
+                  <span class="org">Taller Gráfico Castilla</span>
+                  <span class="dates mono">2023–2024</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
           <div class="about-links">
             <a href="https://www.linkedin.com/in/lucia-mateo-dis4/" target="_blank" rel="noopener">LinkedIn ↗</a>
             <a href="https://www.behance.net/luciamateo" target="_blank" rel="noopener">Behance ↗</a>
@@ -254,6 +315,7 @@
     });
   }
 </script>
+<script src="assets/main.js" defer></script>
 
 </body>
 </html>
