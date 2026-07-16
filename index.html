@@ -13,7 +13,7 @@
 <meta property="og:url" content="https://mmateolucia-art.github.io/portfolio-lucia/">
 <meta property="og:title" content="Lucía Mateo — Diseñadora de Marca y Comunicación Visual">
 <meta property="og:description" content="Portfolio de Lucía Mateo, Diseñadora de Marca y Comunicación Visual: investigación, estrategia, sistema visual y aplicaciones de marca.">
-<meta property="og:image" content="https://cdn.myportfolio.com/95ef7bb7-5c14-4b65-9e2f-064f69b34ddf/188fa407-0d15-4725-ad2d-2b0a0251a399_rwc_423x0x3004x2253x3004.jpg">
+<meta property="og:image" content="assets/images/lucia-perfil.jpg">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Lucía Mateo — Diseñadora de Marca y Comunicación Visual">
@@ -21,7 +21,7 @@
 <meta name="twitter:image" content="https://cdn.myportfolio.com/95ef7bb7-5c14-4b65-9e2f-064f69b34ddf/188fa407-0d15-4725-ad2d-2b0a0251a399_rwc_423x0x3004x2253x3004.jpg">
 
 <meta name="theme-color" content="#EFEAE1">
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=2">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,7 +33,11 @@
 <header class="nav">
   <div class="nav-inner">
     <a href="#top" class="logo">
-      <span class="logo-mark">LM</span>
+      <span class="logo-mark">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="#CFFF4D" stroke="#000000" stroke-width="0.9" stroke-linejoin="round" d="M17.5 19H9a5 5 0 1 1 1.02-9.9A6.5 6.5 0 0 1 22 12.5a4.5 4.5 0 0 1-4.5 6.5Z"/>
+        </svg>
+      </span>
       Lucía Mateo
     </a>
     <nav class="links" id="mobileNav">
@@ -211,13 +215,19 @@
         <h2>Toolkit</h2>
         <p>Lo que uso a diario para llevar una marca del concepto a la pieza final.</p>
       </div>
-      <div class="toolbar reveal">
-        <span class="chip">Illustrator</span>
-        <span class="chip">Photoshop</span>
-        <span class="chip">InDesign</span>
-        <span class="chip">Procreate</span>
-        <span class="chip">Lightroom</span>
-        <span class="chip">Behance</span>
+      <div class="chip-row reveal">
+        <span class="chip chip-lime mono">Illustrator</span>
+        <span class="chip chip-lime mono">Photoshop</span>
+        <span class="chip chip-lime mono">Adobe Firefly</span>
+        <span class="chip chip-lime mono">Nano Banana</span>
+        <span class="chip chip-lime mono">WordPress</span>
+        <span class="chip chip-lime mono">InDesign</span>
+        <span class="chip chip-lime mono">Figma</span>
+        <span class="chip chip-lime mono">Premiere Pro</span>
+        <span class="chip chip-lime mono">Meta Ads Manager</span>
+        <span class="chip chip-lime mono">Instagram</span>
+        <span class="chip chip-lime mono">Canva</span>
+        <span class="chip chip-lime mono">CapCut</span>
       </div>
     </div>
   </section>
@@ -228,10 +238,9 @@
   <section class="pad" id="sobre-mi">
     <div class="wrap">
       <div class="about-grid">
-        <div class="avatar frame" aria-hidden="true">
+        <div class="avatar frame">
           <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
-          <span class="frame-tag">foto / perfil</span>
-          <span class="frame-dim">480 × 480</span>
+          <img src="assets/images/lucia-perfil.jpg" alt="Lucía Mateo, diseñadora de marca y comunicación visual">
         </div>
         <div class="about-copy">
           <div class="eyebrow">sobre mí</div>
@@ -241,27 +250,33 @@
             <div class="fact-col">
               <div class="fact-label mono">Datos rápidos</div>
               <ul class="fact-list">
-                <li>Barcelona, España</li>
-                <li>Lic. en Diseño Gráfico (mención en Identidad) — Universidad Champagnat</li>
-                <li>Español (nativo) · Inglés (C1)</li>
+                <li><span class="fact-icon" aria-hidden="true">📍</span>Barcelona, España</li>
+                <li><span class="fact-icon" aria-hidden="true">🎓</span>Lic. en Diseño Gráfico (mención en Identidad) — Universidad Champagnat</li>
+                <li><span class="fact-icon" aria-hidden="true">🌐</span>Español (nativo) · Inglés (C1)</li>
               </ul>
             </div>
             <div class="fact-col">
               <div class="fact-label mono">Trayectoria</div>
               <ul class="fact-list timeline">
                 <li>
-                  <span class="role">Co-fundadora &amp; Diseñadora de Marca</span>
-                  <span class="org">Koru Travel</span>
+                  <div class="timeline-info">
+                    <span class="role">Co-fundadora &amp; Diseñadora de Marca</span>
+                    <span class="org">Koru Travel</span>
+                  </div>
                   <span class="dates mono">2024–2026</span>
                 </li>
                 <li>
-                  <span class="role">Diseño Gráfico</span>
-                  <span class="org">Vectores, Agencia de Comunicación Digital</span>
+                  <div class="timeline-info">
+                    <span class="role">Diseño Gráfico</span>
+                    <span class="org">Vectores, Agencia de Comunicación Digital</span>
+                  </div>
                   <span class="dates mono">2021–2023</span>
                 </li>
                 <li>
-                  <span class="role">Producción Gráfica</span>
-                  <span class="org">Taller Gráfico Castilla</span>
+                  <div class="timeline-info">
+                    <span class="role">Producción Gráfica</span>
+                    <span class="org">Taller Gráfico Castilla</span>
+                  </div>
                   <span class="dates mono">2023–2024</span>
                 </li>
               </ul>
@@ -269,8 +284,14 @@
           </div>
 
           <div class="about-links">
-            <a href="https://www.linkedin.com/in/lucia-mateo-dis4/" target="_blank" rel="noopener">LinkedIn ↗</a>
-            <a href="https://www.behance.net/luciamateo" target="_blank" rel="noopener">Behance ↗</a>
+            <a href="https://www.linkedin.com/in/lucia-mateo-dis4/" target="_blank" rel="noopener" class="btn btn-ghost">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.44-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.78C.8 0 0 .78 0 1.75v20.5C0 23.22.8 24 1.78 24h20.44C23.2 24 24 23.22 24 22.25V1.75C24 .78 23.2 0 22.22 0z"/></svg>
+              LinkedIn ↗
+            </a>
+            <a href="https://www.behance.net/luciamateo" target="_blank" rel="noopener" class="btn btn-ghost">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.94 8.86H2V6.98h4.94v1.88zM22 12.66c0 .17 0 .34-.02.5h-6.84c.07 1.46.87 2.4 2.33 2.4 1.05 0 1.75-.49 1.98-1.15h2.34c-.42 1.9-1.98 2.99-4.4 2.99-3.18 0-4.98-1.89-4.98-5.02 0-3 1.91-5.06 4.9-5.06 3.05 0 4.7 1.69 4.69 4.34zm-2.51-1.1c-.08-1.15-.87-1.94-1.98-1.94-1.26 0-1.97.75-2.13 1.94h4.11zM7.62 11.6c1.44.31 2.14 1.12 2.14 2.62 0 2.46-1.95 3.55-4.5 3.55H0V4.17h5.31c2.35 0 3.9.95 3.9 3.08 0 1.16-.49 1.91-1.35 2.35H7.63zM2.7 9.62h2.4c1.1 0 1.7-.47 1.7-1.34 0-.96-.79-1.28-1.77-1.28H2.7v2.62zm2.66 5.68c1.17 0 2.03-.45 2.03-1.55 0-1-.74-1.5-1.94-1.5H2.7v3.05h2.66zM16.19 5.4H22v1.8h-5.81V5.4z"/></svg>
+              Behance ↗
+            </a>
           </div>
         </div>
       </div>
