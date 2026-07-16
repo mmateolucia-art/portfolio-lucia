@@ -17,11 +17,21 @@
   html{scroll-behavior:smooth;}
   body{
     margin:0;
+    position:relative;
     background:var(--canvas);
     color:var(--ink);
     font-family:'Inter',sans-serif;
     -webkit-font-smoothing:antialiased;
     overflow-x:hidden;
+  }
+  body::before{
+    content:"";
+    position:fixed; inset:0;
+    background-image: radial-gradient(var(--ink) 1px, transparent 1px);
+    background-size: 24px 24px;
+    opacity:.08;
+    pointer-events:none;
+    z-index:-1;
   }
   h1,h2,h3{
     font-family:'Bricolage Grotesque', sans-serif;
@@ -286,15 +296,6 @@
   .breadcrumb:hover{ color:var(--ink); }
 
   .proj-hero{ padding:40px 0 20px; position:relative; }
-  .proj-hero::before{
-    content:"";
-    position:absolute; inset:0;
-    background-image: radial-gradient(var(--ink) 1px, transparent 1px);
-    background-size: 24px 24px;
-    opacity:.05;
-    pointer-events:none;
-  }
-  .proj-hero .wrap{ position:relative; z-index:1; }
 
   .proj-hero-tags{ display:flex; gap:8px; margin-bottom:20px; flex-wrap:wrap; }
   .proj-hero-tags span{
