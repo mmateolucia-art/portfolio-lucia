@@ -53,6 +53,48 @@
 })();
 
 (function(){
+  const heroVisual = document.querySelector('.hero-v2-visual');
+  if(!heroVisual) return;
+
+  const targets = Array.from(heroVisual.querySelectorAll('[data-depth]'));
+  if(!targets.length) return;
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  const wideEnough = window.matchMedia('(min-width: 861px)').matches;
+  if(reduceMotion || !canHover || !wideEnough) return;
+
+  const hero = document.querySelector('.hero-v2');
+  let rafId = null;
+  let px = 0, py = 0;
+
+  function apply(){
+    rafId = null;
+    targets.forEach(el => {
+      const depth = parseFloat(el.dataset.depth) || 0;
+      el.style.transform = 'translate3d(' + (px * depth).toFixed(2) + 'px, ' + (py * depth).toFixed(2) + 'px, 0)';
+    });
+  }
+
+  function onMove(e){
+    const rect = heroVisual.getBoundingClientRect();
+    const cx = rect.left + rect.width / 2;
+    const cy = rect.top + rect.height / 2;
+    px = Math.max(-1, Math.min(1, (e.clientX - cx) / (rect.width / 2)));
+    py = Math.max(-1, Math.min(1, (e.clientY - cy) / (rect.height / 2)));
+    if(rafId === null) rafId = requestAnimationFrame(apply);
+  }
+
+  function onLeave(){
+    px = 0; py = 0;
+    if(rafId === null) rafId = requestAnimationFrame(apply);
+  }
+
+  hero.addEventListener('mousemove', onMove);
+  hero.addEventListener('mouseleave', onLeave);
+})();
+
+(function(){
   const images = Array.from(document.querySelectorAll('.lightbox-img'));
   const lightbox = document.getElementById('lightbox');
   if(!images.length || !lightbox) return;

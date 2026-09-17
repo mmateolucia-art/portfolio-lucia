@@ -25,7 +25,8 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Sans:wght@400..700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@1,6..72,400&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/images/lucia-hero-web.jpg" fetchpriority="high">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -38,16 +39,14 @@
           <path fill="#CFFF4D" stroke="#000000" stroke-width="0.9" stroke-linejoin="round" d="M17.5 19H9a5 5 0 1 1 1.02-9.9A6.5 6.5 0 0 1 22 12.5a4.5 4.5 0 0 1-4.5 6.5Z"/>
         </svg>
       </span>
-      Lucía Mateo
+      LUCÍA MATEO
     </a>
     <nav class="links" id="mobileNav">
-      <a href="#trabajo">Trabajo</a>
-      <a href="#proceso">Proceso</a>
-      <a href="#toolkit">Toolkit</a>
-      <a href="video-editing.html">Video Editing</a>
-      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#trabajo">Work</a>
+      <a href="#sobre-mi">About</a>
+      <a href="#experiencia">Experience</a>
+      <a href="#contacto">Contact</a>
     </nav>
-    <a href="#contacto" class="nav-cta">Hablemos ↗</a>
     <button class="burger" id="burgerBtn" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileNav">
       <span></span><span></span><span></span>
     </button>
@@ -57,52 +56,40 @@
 <main id="top">
 
   <!-- HERO -->
-  <section class="hero">
-    <div class="wrap hero-grid">
-      <div>
-        <div class="eyebrow">portfolio 2026 — branding &amp; identity design</div>
-        <h1>Identidad visual con <span class="hl">intención.</span></h1>
-        <p class="sub">Hagamos que tu marca se vea tan bien como es tu proyecto. Soy Lucía Mateo, Diseñadora de Marca y Comunicación Visual.</p>
-        <div class="hero-ctas">
-          <a href="#trabajo" class="btn btn-primary">Ver proyectos ↓</a>
-          <button class="btn btn-ghost" id="copyEmailBtn">luciamateodis4@gmail.com</button>
-        </div>
-        <div class="hero-services">
-          <span class="chip">Branding</span>
-          <span class="chip">Naming</span>
-          <span class="chip">Packaging</span>
-          <span class="chip">Papelería</span>
-        </div>
+  <section class="hero-v2" id="hero">
+    <div class="wrap hero-v2-grid">
+      <div class="hero-v2-info">
+        <h1 class="hero-v2-name">
+          <span class="name-line">LUCÍA</span><span class="name-line">MATEO</span>
+        </h1>
+        <p class="hero-v2-role">Graphic &amp; Marketing Designer</p>
+        <p class="hero-v2-lead">Creating visual identities, content and brand experiences with strategy and personality.</p>
+        <p class="hero-v2-meta">Barcelona · 2026</p>
+        <a href="#trabajo" class="hero-v2-cta">Selected work ↓</a>
       </div>
 
-      <div class="hero-visual">
-        <span class="pin"></span>
-        <a class="folder-card fc1 frame" href="tripzo.html">
-          <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
-          <span class="frame-tag">proyecto / 01</span>
-          <div class="folder-thumb">
-            <img src="assets/images/tripzo-cover.jpg" alt="Identidad de marca de Tripzo, agencia de viajes temáticos" loading="lazy">
-          </div>
-          <div class="folder-lbl">Tripzo</div>
-        </a>
+      <div class="hero-v2-visual">
+        <div class="hero-v2-fabric-wrap" data-depth="2.5" aria-hidden="true">
+          <img class="hero-v2-fabric" src="assets/images/pink-fabric-web.jpg" alt="" width="640" height="960">
+        </div>
 
-        <a class="folder-card fc2 frame" href="panaderia-san-ignacio.html">
-          <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
-          <span class="frame-tag">proyecto / 02</span>
-          <div class="folder-thumb">
-            <img src="assets/images/panaderia-san-ignacio-cover.jpg" alt="Rebranding de Panadería San Ignacio" loading="lazy">
+        <div class="hero-v2-photo-tilt">
+          <div class="hero-v2-photo-wrap" data-depth="3">
+            <img class="hero-v2-photo" src="assets/images/lucia-hero-web.jpg" alt="Lucía Mateo riendo con naturalidad, retrato tomado en un espacio interior con fotografías de fondo" width="840" height="1260" fetchpriority="high">
           </div>
-          <div class="folder-lbl">Panadería San Ignacio</div>
-        </a>
+        </div>
 
-        <a class="folder-card fc3 frame" href="koru-travel.html">
-          <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
-          <span class="frame-tag">proyecto / 03</span>
-          <div class="folder-thumb">
-            <img src="assets/images/koru-travel-cover.jpg" alt="Identidad de marca de Koru Travel, agencia de viajes en Mendoza" loading="lazy">
-          </div>
-          <div class="folder-lbl">Koru Travel</div>
-        </a>
+        <div class="hero-v2-clip-wrap" data-depth="-4" aria-hidden="true">
+          <img class="hero-v2-clip" src="assets/images/clip-cream-cut.png" alt="" width="420" height="427">
+        </div>
+
+        <div class="hero-v2-star-main-wrap" data-depth="-7" aria-hidden="true">
+          <img class="hero-v2-star-main" src="assets/images/star-main-cut.png" alt="" width="520" height="520">
+        </div>
+
+        <div class="hero-v2-star-painted-wrap" data-depth="3.5" aria-hidden="true">
+          <img class="hero-v2-star-painted" src="assets/images/star-painted-cut.png" alt="" width="560" height="560">
+        </div>
       </div>
     </div>
   </section>
@@ -124,7 +111,7 @@
           <span class="frame-tag">proyecto / 01</span>
           <div class="proj-thumb">
             <img src="assets/images/tripzo-portada.jpg" alt="Identidad de marca de Tripzo, agencia de viajes temáticos" loading="lazy">
-            <div class="tags"><span>Brand Identity</span><span>Tesis 2026</span></div>
+            <div class="tags"><span>Brand Identity</span><span>Tesis 2025</span></div>
           </div>
           <div class="proj-body">
             <h3>Tripzo</h3>
@@ -142,7 +129,7 @@
           </div>
           <div class="proj-body">
             <h3>Panadería San Ignacio</h3>
-            <p>Ejercicio personal de rebranding sobre un negocio familiar con más de 40 años de historia: una identidad renovada que conserva la cercanía y la calidad artesanal que la caracterizan.</p>
+            <p>Ejercicio personal de rebranding sobre un negocio familiar con más de 30 años de historia: una identidad renovada que conserva la cercanía y la calidad artesanal que la caracterizan.</p>
             <div class="proj-arrow">Ver proyecto →</div>
           </div>
         </a>
@@ -156,7 +143,7 @@
           </div>
           <div class="proj-body">
             <h3>Koru Travel</h3>
-            <p>Cofundé esta agencia de turismo en Mendoza y construí su identidad de marca desde cero. Con estrategia de contenido y campañas en Meta Ads, la comunidad creció a más de 4.500 seguidores, generando entre 70 y 100 leads diarios.</p>
+           <p>Cofundé esta agencia de turismo en Mendoza y desarrollé su identidad de marca desde cero, desde el posicionamiento y el sistema visual hasta su aplicación en contenidos y campañas. La marca alcanzó más de 4.500 seguidores y generó entre 70 y 100 leads diarios.</p>
             <div class="proj-arrow">Ver proyecto →</div>
           </div>
         </a>
@@ -266,7 +253,7 @@
                 <li><span class="fact-icon" aria-hidden="true">🌐</span>Español (nativo) · Inglés (C1)</li>
               </ul>
             </div>
-            <div class="fact-col">
+            <div class="fact-col" id="experiencia">
               <div class="fact-label mono">Trayectoria</div>
               <ul class="fact-list timeline">
                 <li>
@@ -314,8 +301,8 @@
     <div class="wrap">
       <div class="contact">
         <div class="eyebrow">contacto</div>
-        <h2>¿Trabajamos juntas en tu próxima marca?</h2>
-        <p class="sub">Escríbeme y conversemos sobre tu proyecto, sin compromiso.</p>
+        <h2>¿Conectamos?</h2>
+        <p class="sub">Actualmente estoy abierta a nuevas oportunidades en branding, diseño, comunicación visual y marketing digital.</p>
         <a href="mailto:luciamateodis4@gmail.com" class="big-email">luciamateodis4@gmail.com</a>
         <div class="social-row">
           <a href="https://www.linkedin.com/in/lucia-mateo-dis4/" target="_blank" rel="noopener">LinkedIn ↗</a>
