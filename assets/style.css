@@ -288,14 +288,14 @@
     box-shadow:0 22px 44px -16px rgba(21,21,21,.35);
   }
 
-  .hero-v2-clip-wrap{ position:absolute; top:8%; left:33%; width:25%; z-index:5; }
-  .hero-v2-clip{ width:100%; height:auto; display:block; filter:drop-shadow(0 6px 10px rgba(21,21,21,.2)); }
-
-  .hero-v2-star-main-wrap{ position:absolute; top:66%; left:-11%; width:31%; z-index:4; }
+  /* stars are positioned as %% of .hero-v2-photo-tilt (their nearest positioned ancestor is now the photo
+     itself, not .hero-v2-visual), so their overlap with the photo stays constant at any container width instead
+     of drifting whenever the visual column shrinks or a breakpoint changes photo-tilt's own top/left/width. */
+  .hero-v2-star-main-wrap{ position:absolute; top:80%; left:-25%; width:48%; z-index:4; }
   .hero-v2-star-main{ width:100%; height:auto; display:block; filter:drop-shadow(0 10px 16px rgba(21,21,21,.18)); }
 
   /* small sparkle stars, inline SVG (same mark as the nav star icon), clustered over the photo's top-right corner */
-  .hero-v2-star-small-wrap{ position:absolute; top:-1%; left:64%; z-index:6; }
+  .hero-v2-star-small-wrap{ position:absolute; top:15%; left:85%; z-index:6; }
   .hero-v2-star-small{
     position:absolute;
     display:block;
@@ -309,7 +309,6 @@
   .hero-v2-hello, .hero-v2-name,
   .hero-v2-role, .hero-v2-lead, .hero-v2-meta, .hero-v2-cta,
   .hero-v2-fabric, .hero-v2-photo{ opacity:1; }
-  .hero-v2-clip{ opacity:1; transform:rotate(-8deg); }
   .hero-v2-star-main{ opacity:1; transform:rotate(0deg); }
   .hero-v2-star-small{ opacity:1; }
 
@@ -317,7 +316,6 @@
   @keyframes heroFadeUp{ from{opacity:0; transform:translateY(14px);} to{opacity:1; transform:translateY(0);} }
   @keyframes heroFabricIn{ from{opacity:0;} to{opacity:1;} }
   @keyframes heroPhotoIn{ from{opacity:0; transform:translateY(18px) scale(.97);} to{opacity:1; transform:translateY(0) scale(1);} }
-  @keyframes heroClipIn{ from{opacity:0; transform:translate(-6px,-8px) rotate(-8deg);} to{opacity:1; transform:translate(0,0) rotate(-8deg);} }
   @keyframes heroStarMainIn{ from{opacity:0; transform:rotate(-6deg) scale(.94);} to{opacity:1; transform:rotate(0deg) scale(1);} }
   @keyframes heroStarSmallIn{ from{opacity:0; transform:translateY(8px) scale(.9);} to{opacity:1; transform:translateY(0) scale(1);} }
 
@@ -330,7 +328,6 @@
   .js .hero-v2-fabric{ opacity:0; animation:heroFabricIn .6s ease-out .15s both; }
   .js .hero-v2-photo{ opacity:0; transform:translateY(18px) scale(.97); animation:heroPhotoIn .8s cubic-bezier(.16,.8,.24,1) .24s both; }
   .js .hero-v2-star-main{ opacity:0; transform:rotate(-6deg) scale(.94); animation:heroStarMainIn .65s ease-out .55s both; }
-  .js .hero-v2-clip{ opacity:0; transform:translate(-6px,-8px) rotate(-8deg); animation:heroClipIn .45s ease-out .72s both; }
   .js .hero-v2-star-small{ opacity:0; transform:translateY(8px) scale(.9); animation:heroStarSmallIn .5s ease-out .6s both; }
 
   @media (prefers-reduced-motion: reduce){
@@ -338,7 +335,6 @@
     .js .hero-v2-hello, .js .hero-v2-name,
     .js .hero-v2-role, .js .hero-v2-lead, .js .hero-v2-meta, .js .hero-v2-cta,
     .js .hero-v2-fabric, .js .hero-v2-photo, .js .hero-v2-star-small{ opacity:1 !important; transform:none !important; }
-    .js .hero-v2-clip{ opacity:1 !important; transform:rotate(-8deg) !important; }
     .js .hero-v2-star-main{ opacity:1 !important; transform:rotate(0deg) !important; }
   }
 
@@ -354,8 +350,8 @@
     .hero-v2-visual{ max-width:340px; margin:0 auto; justify-self:center; }
     .hero-v2-fabric-wrap, .hero-v2-star-small-wrap{ display:none; }
     .hero-v2-photo-tilt{ top:4%; left:12%; width:66%; }
-    .hero-v2-clip-wrap{ top:1%; left:36%; width:18%; }
-    .hero-v2-star-main-wrap{ bottom:2%; left:-4%; top:auto; width:34%; }
+    /* .hero-v2-star-main-wrap needs no mobile override: it's positioned as %% of .hero-v2-photo-tilt now,
+       which keeps the same aspect-ratio at every breakpoint. */
   }
 
   @media (max-width:480px){
@@ -386,6 +382,174 @@
   .proj-body h3{ font-size:20px; margin-bottom:8px; }
   .proj-body p{ margin:0; font-size:14px; line-height:1.5; color:var(--ink-soft); }
   .proj-arrow{ margin-top:14px; font-family:'JetBrains Mono', monospace; font-size:13px; display:flex; align-items:center; gap:6px; }
+
+  /* ---------- proyectos (interactive index, replaces the old work-grid in index.html) ---------- */
+  .proyectos{
+    --hp-paper:#F4F0E8;
+    --hp-ink:#151515;
+    --hp-red:#A71326;
+  }
+
+  .proyectos-head{ margin-bottom:56px; }
+  .proyectos-eyebrow{
+    font-family:'Newsreader', serif;
+    font-style:italic;
+    font-weight:400;
+    font-size:clamp(18px, 1.8vw, 22px);
+    color:var(--hp-red);
+    margin:0 0 4px;
+  }
+  .proyectos-title{
+    font-family:'Bricolage Grotesque', 'Instrument Sans', sans-serif;
+    font-weight:600;
+    font-size:clamp(40px, 7vw, 96px);
+    line-height:.95;
+    letter-spacing:-0.02em;
+    color:var(--hp-ink);
+    margin:0;
+  }
+
+  /* desktop: CD centered, two projects flanking each side in a staggered, asymmetric layout */
+  .proyectos-composition{
+    display:grid;
+    grid-template-columns:1fr minmax(240px,420px) 1fr;
+    grid-template-rows:repeat(4, minmax(88px,auto));
+    align-items:center;
+    column-gap:56px;
+    row-gap:4px;
+  }
+
+  .proyectos-cd-wrap{
+    grid-column:2;
+    grid-row:1 / -1;
+    justify-self:center;
+    align-self:center;
+    position:relative;
+    width:100%;
+    aspect-ratio:1/1;
+  }
+  .proyectos-cd{ width:100%; height:100%; object-fit:contain; display:block; transform:rotate(0deg); transition:transform .6s cubic-bezier(.16,.8,.24,1); }
+  .proyectos-cd-number{
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:'Bricolage Grotesque', sans-serif;
+    font-weight:700;
+    font-size:clamp(28px, 5vw, 52px);
+    color:var(--hp-ink);
+    text-shadow:0 1px 3px rgba(255,255,255,.55);
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .3s ease;
+  }
+
+  .proyectos-item{
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+    text-decoration:none;
+    color:var(--hp-ink);
+    padding:4px 2px;
+  }
+  .proyectos-item-line{ display:flex; align-items:baseline; gap:14px; }
+  .proyectos-item-num{
+    font-family:'Instrument Sans', sans-serif;
+    font-size:14px;
+    font-weight:500;
+    letter-spacing:.04em;
+    color:rgba(21,21,21,.45);
+    transition:color .25s ease;
+  }
+  .proyectos-item-name{
+    font-family:'Bricolage Grotesque', sans-serif;
+    font-weight:600;
+    font-size:clamp(22px, 2.6vw, 32px);
+    letter-spacing:-0.01em;
+    display:inline-block;
+    text-decoration:underline;
+    text-decoration-color:transparent;
+    text-underline-offset:6px;
+    transition:text-decoration-color .25s ease, transform .25s ease, color .25s ease;
+  }
+  .proyectos-item-cat{
+    font-family:'Instrument Sans', sans-serif;
+    font-size:13px;
+    letter-spacing:.03em;
+    text-transform:uppercase;
+    color:rgba(21,21,21,.55);
+  }
+
+  .proyectos-item:hover .proyectos-item-num, .proyectos-item:focus-visible .proyectos-item-num,
+  .proyectos-item:hover .proyectos-item-name, .proyectos-item:focus-visible .proyectos-item-name{
+    color:var(--hp-red);
+  }
+  .proyectos-item:hover .proyectos-item-name, .proyectos-item:focus-visible .proyectos-item-name{
+    text-decoration-color:var(--hp-red);
+  }
+
+  .proyectos-item-01, .proyectos-item-02{ grid-column:1; justify-self:end; align-items:flex-end; text-align:right; }
+  .proyectos-item-03, .proyectos-item-04{ grid-column:3; justify-self:start; align-items:flex-start; text-align:left; }
+  .proyectos-item-01{ grid-row:1; transform:translateY(-6px); }
+  .proyectos-item-02{ grid-row:3; transform:translateY(18px); }
+  .proyectos-item-03{ grid-row:2; transform:translateY(10px); }
+  .proyectos-item-04{ grid-row:4; transform:translateY(-14px); }
+
+  /* left-column items lean toward the CD (right) on hover, right-column items lean left */
+  .proyectos-item-01:hover .proyectos-item-name, .proyectos-item-01:focus-visible .proyectos-item-name,
+  .proyectos-item-02:hover .proyectos-item-name, .proyectos-item-02:focus-visible .proyectos-item-name{
+    transform:translateX(6px);
+  }
+  .proyectos-item-03:hover .proyectos-item-name, .proyectos-item-03:focus-visible .proyectos-item-name,
+  .proyectos-item-04:hover .proyectos-item-name, .proyectos-item-04:focus-visible .proyectos-item-name{
+    transform:translateX(-6px);
+  }
+
+  /* show the matching number on the CD while its project is hovered/focused */
+  .proyectos-composition:has(.proyectos-item-01:hover) .proyectos-cd-number[data-num="01"],
+  .proyectos-composition:has(.proyectos-item-01:focus-visible) .proyectos-cd-number[data-num="01"],
+  .proyectos-composition:has(.proyectos-item-02:hover) .proyectos-cd-number[data-num="02"],
+  .proyectos-composition:has(.proyectos-item-02:focus-visible) .proyectos-cd-number[data-num="02"],
+  .proyectos-composition:has(.proyectos-item-03:hover) .proyectos-cd-number[data-num="03"],
+  .proyectos-composition:has(.proyectos-item-03:focus-visible) .proyectos-cd-number[data-num="03"],
+  .proyectos-composition:has(.proyectos-item-04:hover) .proyectos-cd-number[data-num="04"],
+  .proyectos-composition:has(.proyectos-item-04:focus-visible) .proyectos-cd-number[data-num="04"]{
+    opacity:1;
+  }
+
+  /* a few subtle degrees of rotation per project, eased — never a constant spin */
+  @media (prefers-reduced-motion: no-preference){
+    .proyectos-composition:has(.proyectos-item-01:hover) .proyectos-cd,
+    .proyectos-composition:has(.proyectos-item-01:focus-visible) .proyectos-cd{ transform:rotate(-5deg); }
+    .proyectos-composition:has(.proyectos-item-02:hover) .proyectos-cd,
+    .proyectos-composition:has(.proyectos-item-02:focus-visible) .proyectos-cd{ transform:rotate(3deg); }
+    .proyectos-composition:has(.proyectos-item-03:hover) .proyectos-cd,
+    .proyectos-composition:has(.proyectos-item-03:focus-visible) .proyectos-cd{ transform:rotate(-3deg); }
+    .proyectos-composition:has(.proyectos-item-04:hover) .proyectos-cd,
+    .proyectos-composition:has(.proyectos-item-04:focus-visible) .proyectos-cd{ transform:rotate(5deg); }
+  }
+
+  @media (max-width:860px){
+    .proyectos-head{ margin-bottom:40px; text-align:center; }
+    .proyectos-composition{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:36px;
+    }
+    .proyectos-cd-wrap{ width:min(220px, 58vw); }
+    .proyectos-item-01, .proyectos-item-02, .proyectos-item-03, .proyectos-item-04{
+      justify-self:auto; align-items:center; text-align:center; transform:none;
+    }
+    .proyectos-item-line{ justify-content:center; }
+    .proyectos-item-01:hover .proyectos-item-name, .proyectos-item-01:focus-visible .proyectos-item-name,
+    .proyectos-item-02:hover .proyectos-item-name, .proyectos-item-02:focus-visible .proyectos-item-name,
+    .proyectos-item-03:hover .proyectos-item-name, .proyectos-item-03:focus-visible .proyectos-item-name,
+    .proyectos-item-04:hover .proyectos-item-name, .proyectos-item-04:focus-visible .proyectos-item-name{
+      transform:none;
+    }
+  }
 
   /* ---------- process (numbered — genuinely sequential) ---------- */
   .steps{ display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
