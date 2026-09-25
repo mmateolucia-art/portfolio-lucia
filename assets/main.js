@@ -160,3 +160,24 @@
     if(!e.target.closest('.lightbox-image, .lightbox-btn')) close();
   });
 })();
+
+(function(){
+  const envelope = document.querySelector('.about-hp-visual');
+  if(!envelope) return;
+
+  if(!('IntersectionObserver' in window)){
+    envelope.classList.add('is-open');
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('is-open');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.35 });
+
+  observer.observe(envelope);
+})();
